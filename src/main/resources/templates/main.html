@@ -6,7 +6,23 @@
 </head>
 <body>
 <div>
-    <h1 th:text="${some}"></h1>
+    <form th:action="@{/logout}" method="post">
+    <input type="submit" value="Sign Out"/>
+</form>
+</div>
+<div>
+    <form method="post">
+        <input type="text" name="text" placeholder="Введите сообщение">
+        <input type="text" name="tag" placeholder="Тег">
+        <button type="submit">Добавить!</button>
+    </form>
+</div>
+<div>Список сообщений</div>
+<div th:each="message : ${messages}">
+    <a th:text="${message.id}"></a>
+    <b th:text="${message.tag}"></b>
+    <c th:text="${message.text}"></c>
+    <i></i>
 </div>
 </body>
 </html>

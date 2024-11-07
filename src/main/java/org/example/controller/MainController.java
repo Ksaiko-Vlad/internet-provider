@@ -1,6 +1,7 @@
 package org.example.controller;
 
 import org.example.domain.Product;
+import org.example.domain.Type;
 import org.example.repos.ProductRepo; // Переименуйте репозиторий для большей ясности
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -26,7 +27,7 @@ public class MainController {
     }
 
     @PostMapping("/main")
-    public String add(@RequestParam String name, @RequestParam String type, @RequestParam Integer price, Model model) {
+    public String add(@RequestParam String name, @RequestParam Type type, @RequestParam Integer price, Model model) {
         Product product = new Product(name, price, type); // Конструктор без id
 
         productRepo.save(product);

@@ -9,9 +9,10 @@
     <form th:action="@{/logout}" method="post">
         <input type="submit" value="Sign Out"/>
     </form>
+    <span><a th:href="@{/user}">Список пользователей</a></span>
 </div>
 <div>
-    <form method="post">
+    <form th:action="@{/main}" method="post">
         <input type="text" name="name" placeholder="Название">
         <input type="text" name="type" placeholder="Тип">
         <input type="text" name="price" placeholder="Цена">

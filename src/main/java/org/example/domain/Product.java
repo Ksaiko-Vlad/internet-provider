@@ -1,24 +1,36 @@
 package org.example.domain;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+
+import java.util.List;
 
 @Entity
 public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer id;
+    private Long id;
     private String name;
-    private String type;
     private Integer price;
 
-    public Integer getId() {
+    @Enumerated(EnumType.STRING)
+    private Type type;
+
+    @OneToMany(mappedBy = "product", cascade = CascadeType.ALL,orphanRemoval = true)
+    private List<Feedback> feedbacks;
+
+    public Type getType() {
+        return type;
+    }
+
+    public void setType(Type type) {
+        this.type = type;
+    }
+
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -38,15 +50,7 @@ public class Product {
         this.price = price;
     }
 
-    public String getType() {
-        return type;
-    }
-
-    public void setType(String type) {
-        this.type = type;
-    }
-
-    public Product( String name, Integer price, String type) {
+    public Product( String name, Integer price, Type type) {
         this.name = name;
         this.price = price;
         this.type = type;

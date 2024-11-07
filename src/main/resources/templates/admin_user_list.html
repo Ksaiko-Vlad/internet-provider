@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <title>List of users</title>
+</head>
+<body>
+    <h1>Список пользователей</h1>
+    <table>
+        <thead>
+        <tr>
+            <th>Имя</th>
+            <th>Номер телефона</th>
+            <th>Роль</th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="user : ${users}">
+            <td th:text="${user.username}">Username</td>
+            <td th:text="${user.phone}">Phone</td>
+            <td th:text="${#strings.arrayJoin(user.roles, ', ')}">Role</td>
+            <td>
+                <a th:href="@{/user/{id}(id=${user.id})}">edit</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>

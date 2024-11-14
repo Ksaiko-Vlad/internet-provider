@@ -1,0 +1,10 @@
+.product-card {
+        min-height: 250px !important; /* Увеличиваем высоту карточки */
+    }
+    .product-description {
+        width: 60% !important; /* Ширина блока с описанием */
+    }
+    .product-image {
+        width: 40% !important; /* Ширина блока с изображением */
+        max-width: 200px !important; /* Максимальная ширина изображения */
+    }

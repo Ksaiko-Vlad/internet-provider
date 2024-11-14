@@ -11,6 +11,9 @@ public class Product {
     private Long id;
     private String name;
     private Integer price;
+    private String description;
+
+    private  String filename;
 
     @Enumerated(EnumType.STRING)
     private Type type;
@@ -20,6 +23,14 @@ public class Product {
 
     public Type getType() {
         return type;
+    }
+
+    public String getFilename() {
+        return filename;
+    }
+
+    public void setFilename(String filename) {
+        this.filename = filename;
     }
 
     public void setType(Type type) {
@@ -46,12 +57,21 @@ public class Product {
         return price;
     }
 
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
     public void setPrice(Integer price) {
         this.price = price;
     }
 
-    public Product( String name, Integer price, Type type) {
+    public Product( String name,String description, Integer price, Type type) {
         this.name = name;
+        this.description = description;
         this.price = price;
         this.type = type;
     }

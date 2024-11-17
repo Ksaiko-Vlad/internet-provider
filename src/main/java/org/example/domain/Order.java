@@ -25,6 +25,22 @@ public class Order {
     )
     private List<Product> products;
 
+    public List<Product> getProducts() {
+        return products;
+    }
+
+    public void setProducts(List<Product> products) {
+        this.products = products;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
     public Long getId() {
         return id;
     }
@@ -39,6 +55,12 @@ public class Order {
 
     public void setTime(LocalDateTime time) {
         this.time = time;
+    }
+
+    public Order(List<Product> products, LocalDateTime time, User user) {
+        this.products = products;
+        this.time = time;
+        this.user = user;
     }
 
     public Order() {

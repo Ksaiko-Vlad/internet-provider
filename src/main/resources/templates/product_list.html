@@ -19,6 +19,10 @@
         <p><strong>Тип:</strong> <span th:text="${product.type}"></span></p>
         <p><strong>Цена:</strong> <span th:text="${product.price}"></span> руб.</p>
         <p><strong>Описание:</strong> <span th:text="${product.description}"></span></p>
+        <form th:action="@{/basket/add}" method="post">
+          <input type="hidden" name="productId" th:value="${product.id}">
+          <button type="submit" class="btn btn-primary">Добавить в корзину</button>
+        </form>
       </div>
       <!-- Правый блок с изображением товара (40%) -->
       <div th:if="${product.filename != null}" class="product-image ms-auto">

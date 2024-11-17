@@ -1,7 +1,5 @@
 .btn {
-    color: #ffffff !important;
     border: var(--bs-btn-border-width) solid #ffffff !important;
-    background-color: #017d8c !important;
     font-weight: bold !important;
     padding: 10px 20px !important;
     border-radius: 5px !important;

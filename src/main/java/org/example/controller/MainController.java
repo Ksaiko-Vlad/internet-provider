@@ -46,7 +46,7 @@ private String uploadPath;
     }
 
     @GetMapping("/addproduct")
-    public String main(Model model) {
+    public String addproduct(Model model) {
         model.addAttribute("products", productRepo.findAll());
         return "admin_add_product";
     }

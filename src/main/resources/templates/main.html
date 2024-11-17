@@ -10,9 +10,6 @@
 <body>
 <div th:insert="~{fragments/header :: header}"></div>
 <div>
-    <form th:action="@{/logout}" method="post">
-        <input type="submit" value="Sign Out"/>
-    </form>
     <span><a th:href="@{/user}">Список пользователей</a></span>
     <span><a th:href="@{/addproduct}">Добавить услугу</a></span>
 </div>

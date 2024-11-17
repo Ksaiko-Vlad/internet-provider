@@ -1,3 +1,9 @@
-body{
-color #113;
+.btn {
+    border: var(--bs-btn-border-width) solid #ffffff !important;
+    font-weight: bold !important;
+    padding: 10px 20px !important;
+    border-radius: 5px !important;
+    cursor: pointer !important;
+    transition: background-color 0.3s !important;
+    border-radius: 20px !important;
 }

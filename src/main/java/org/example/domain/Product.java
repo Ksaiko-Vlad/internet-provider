@@ -3,6 +3,7 @@ package org.example.domain;
 import jakarta.persistence.*;
 
 import java.util.List;
+import java.util.Objects;
 
 @Entity
 public class Product {
@@ -48,6 +49,20 @@ public class Product {
     public String getName() {
         return name;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Product product = (Product) o;
+        return Objects.equals(id, product.id); // Сравнение только по id
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id); // Генерация hashCode только на основе id
+    }
+
 
     public void setName(String name) {
         this.name = name;

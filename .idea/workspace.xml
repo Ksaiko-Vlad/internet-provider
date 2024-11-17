@@ -4,24 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="02f3e36b-41bb-4226-940d-bff9de01def9" name="Changes" comment="Add bootstrap and start working with frontend">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/OrderController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/service/OrderService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/service/ProductService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/basket.html" afterDir="false" />
+    <list default="true" id="02f3e36b-41bb-4226-940d-bff9de01def9" name="Changes" comment="I made a shopping cart page, calculated the order amount, deleted and added to the cart. Processing the order entity">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/MainController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/domain/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/domain/Order.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/domain/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/domain/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/repos/ProductRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/repos/ProductRepo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/information.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/information.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/fragments/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/fragments/header.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/greeting.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/greeting.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/main.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/product_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/product_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/repos/OrderRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/repos/OrderRepo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/service/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/service/OrderService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/profile.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -175,7 +162,15 @@
       <option name="project" value="LOCAL" />
       <updated>1731577089653</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="I made a shopping cart page, calculated the order amount, deleted and added to the cart. Processing the order entity">
+      <option name="closed" value="true" />
+      <created>1731877991438</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1731877991438</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -195,6 +190,7 @@
     <MESSAGE value="Add authorisation and registration (Messages not working)" />
     <MESSAGE value="Add authorisation and registration, also add start working with admin panel, add UserCheck page, add User editor" />
     <MESSAGE value="Add bootstrap and start working with frontend" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add bootstrap and start working with frontend" />
+    <MESSAGE value="I made a shopping cart page, calculated the order amount, deleted and added to the cart. Processing the order entity" />
+    <option name="LAST_COMMIT_MESSAGE" value="I made a shopping cart page, calculated the order amount, deleted and added to the cart. Processing the order entity" />
   </component>
 </project>

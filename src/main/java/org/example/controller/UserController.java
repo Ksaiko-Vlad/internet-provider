@@ -1,7 +1,9 @@
 package org.example.controller;
 
+import org.example.domain.Order;
 import org.example.domain.Role;
 import org.example.domain.User;
+import org.example.service.OrderService;
 import org.example.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -10,6 +12,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Map;
 
 @Controller
@@ -17,6 +20,9 @@ import java.util.Map;
 public class UserController {
     @Autowired
     private UserService userService;
+
+    @Autowired
+    private OrderService orderService;
 
     @PreAuthorize("hasAuthority('ADMIN')")
     @GetMapping
@@ -49,11 +55,16 @@ public class UserController {
 
     @GetMapping("profile")
     public String getProfile(Model model, @AuthenticationPrincipal User user) {
+        // Используем объект orderService для вызова метода
+        List<Order> userOrders = orderService.getOrdersByUser(user);
+        model.addAttribute("orders", userOrders);
+
         model.addAttribute("username", user.getUsername());
         model.addAttribute("phone", user.getPhone());
 
         return "profile";
     }
+
 
     @PostMapping("profile")
     public String updateProfile(

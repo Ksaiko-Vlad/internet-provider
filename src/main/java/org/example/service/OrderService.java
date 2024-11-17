@@ -22,6 +22,10 @@ public class OrderService {
     // Используем CopyOnWriteArrayList для потокобезопасности
     private final List<Product> cart = new CopyOnWriteArrayList<>();
 
+    public List<Order> getOrdersByUser(User user) {
+        return orderRepo.findByUser(user);
+    }
+
     // Добавить товар в корзину
     public void addToCart(Product product) {
         if (product != null) {

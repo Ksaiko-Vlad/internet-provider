@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+  <title>Редактировать продукт</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div th:insert="~{fragments/header :: header}"></div>
+
+<div class="container my-5 d-flex justify-content-center">
+  <div class="card shadow-lg rounded-5 border-0" style="max-width: 800px; width: 100%;">
+    <div class="card-header bg-dark text-white text-center rounded-top-5">
+      <h2 class="mb-0">Редактировать продукт</h2>
+    </div>
+    <div class="card-body p-4">
+      <form th:action="@{/admin_product_list/edit/{id}(id=${product.id})}" th:object="${product}" method="post">
+        <div class="mb-3">
+          <label for="name" class="form-label"><strong>Название</strong></label>
+          <input type="text" class="form-control" id="name" th:field="*{name}" required />
+        </div>
+
+        <div class="mb-3">
+          <label for="price" class="form-label"><strong>Цена</strong></label>
+          <input type="number" class="form-control" id="price" th:field="*{price}" required />
+        </div>
+
+        <div class="mb-3">
+          <label for="description" class="form-label"><strong>Описание</strong></label>
+          <textarea id="description" class="form-control" th:field="*{description}" rows="3" required></textarea>
+        </div>
+
+        <div class="mb-3">
+          <label for="type" class="form-label"><strong>Тип</strong></label>
+          <select id="type" class="form-select" th:field="*{type}" required>
+            <option th:each="type : ${T(org.example.domain.Type).values()}"
+                    th:value="${type}" th:text="${type}">Тип</option>
+          </select>
+        </div>
+
+        <div class="d-flex justify-content-end">
+          <button type="submit" class="btn btn-success">Сохранить</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

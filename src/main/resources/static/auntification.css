@@ -1,0 +1,109 @@
+   /* Фоновый градиент для всей страницы */
+    body {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: 'Arial', sans-serif;
+    }
+
+    /* Стилизация карточки */
+    .card {
+        border-radius: 1.25rem;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+    }
+
+    /* Хедер карточки */
+    .card-header {
+        background: linear-gradient(135deg, #87CEFA, #B0E0E6); /* Градиент нежно-голубого цвета */
+        color: white;
+        text-align: center;
+        padding: 2rem;
+        border-bottom: none;
+        font-size: 2rem;
+        font-weight: 700;
+       font-family: 'Anton', sans-serif;
+        text-transform: uppercase;
+        letter-spacing: 2px; /* Немного увеличивает расстояние между буквами */
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Тень */
+    }
+
+    /* Тело карточки */
+    .card-body {
+        background-color: #f1f1f1;
+        padding: 2rem;
+    }
+
+    .card-footer {
+        background-color: #f1f1f1;
+        text-align: center;
+        padding: 1rem;
+    }
+
+    /* Формы */
+    .form-control {
+        border-radius: 0.75rem;
+        box-shadow: none;
+    }
+
+    .btn-primary {
+        background-color: #00BFFF; /* Голубой */
+        border-color: #00BFFF;
+        border-radius: 0.75rem;
+        padding: 0.75rem 1.25rem;
+        font-weight: 600;
+        transition: background-color 0.3s ease;
+    }
+
+    .btn-primary:hover {
+        background-color: #1E90FF; /* Темно-голубой */
+        border-color: #1E90FF;
+    }
+
+    /* Стилизация ссылок */
+    a {
+        color: #00BFFF;
+        text-decoration: none;
+        font-weight: 500;
+    }
+
+    a:hover {
+        color: #1E90FF;
+        text-decoration: none;
+    }
+
+    /* Стиль для alert сообщений */
+    .alert {
+        border-radius: 0.75rem;
+    }
+
+    /* Убираем подчеркивание на ссылках */
+    .card-footer p {
+        margin-bottom: 0;
+    }
+
+.btn-outline-danger {
+             background-color: #FF6961; /* Светло-красный цвет */
+             border-color: #FF6961; /* Светло-красный цвет */
+             border-radius: 50px; /* Закругленные края */
+             padding: 0.75rem 1.25rem;
+             font-weight: 600;
+             color: #fff; /* Белый текст для контраста */
+             transition: all 0.3s ease; /* Плавный переход для hover */
+             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Легкая тень */
+         }
+
+         /* Эффект наведения */
+         .btn-outline-danger:hover {
+             background-color: #E63946; /* Более темный красный цвет */
+             border-color: #E63946; /* Более темный красный цвет */
+             transform: scale(1.05); /* Легкое увеличение */
+             box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Более глубокая тень */
+         }
+
+         /* Убираем стандартный outline при фокусе */
+         .btn-outline-danger:focus {
+             outline: none;
+             box-shadow: 0 0 0 0.2rem rgba(255, 105, 97, 0.5); /* Красноватая подсветка */
+         }

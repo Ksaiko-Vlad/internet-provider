@@ -14,10 +14,71 @@
 
     <!-- Основной контент -->
     <div class="content">
-        <!-- Здесь будет ваш основной контент -->
         <div class="container">
-            <h1>Добро пожаловать в NovaNet!</h1>
-            <p>Основной контент страницы.</p>
+            <!-- Приветствие -->
+            <div class="text-center my-5">
+                <h1>Добро пожаловать в NovaNet!</h1>
+                <p class="lead">Мы предоставляем высококачественные услуги по оптимизации бизнес-процессов и внедрению инновационных решений.</p>
+                <a href="/about" class="btn btn-primary btn-lg">Узнать больше</a>
+            </div>
+
+            <!-- Карточки с услугами -->
+            <div class="row text-center mb-5">
+                <div class="col-md-4">
+                    <div class="card shadow-sm">
+                        <img src="service1.jpg" class="card-img-top" alt="Услуга 1">
+                        <div class="card-body">
+                            <h5 class="card-title">Услуга 1</h5>
+                            <p class="card-text">Описание первой услуги. Подробности и условия можно узнать на странице.</p>
+                            <a href="/service1" class="btn btn-outline-primary">Подробнее</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card shadow-sm">
+                        <img src="service2.jpg" class="card-img-top" alt="Услуга 2">
+                        <div class="card-body">
+                            <h5 class="card-title">Услуга 2</h5>
+                            <p class="card-text">Описание второй услуги. Узнайте больше, перейдя по ссылке.</p>
+                            <a href="/service2" class="btn btn-outline-primary">Подробнее</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card shadow-sm">
+                        <img src="service3.jpg" class="card-img-top" alt="Услуга 3">
+                        <div class="card-body">
+                            <h5 class="card-title">Услуга 3</h5>
+                            <p class="card-text">Краткое описание третьей услуги, с возможностью перехода на страницу с подробной информацией.</p>
+                            <a href="/service3" class="btn btn-outline-primary">Подробнее</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Новости или акции -->
+            <div class="alert alert-info text-center">
+                <h4 class="alert-heading">Акция месяца!</h4>
+                <p>Промо-акция на все наши услуги до конца месяца. Получите скидку 20% при заказе через сайт.</p>
+                <hr>
+                <a href="/promotion" class="btn btn-success">Узнать подробности</a>
+            </div>
+
+            <!-- Отзывы -->
+            <div class="mt-5">
+                <h2 class="text-center text-dark mb-4">Отзывы наших клиентов</h2>
+                <div class="row">
+                    <div class="col-md-4 mb-4" th:each="feedback : ${feedbacks}">
+                        <div class="card shadow-sm">
+                            <div class="card-body">
+                                <h5 class="card-title text-secondary" th:text="'Оценка: ' + ${feedback.mark} + '/5'">Оценка: 5/5</h5>
+                                <p class="card-text" th:text="${feedback.description}">Текст отзыва</p>
+                                <p class="text-muted small" th:text="'Оставил: ' + ${feedback.user.username}">Оставил: username</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 

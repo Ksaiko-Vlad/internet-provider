@@ -4,16 +4,44 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="02f3e36b-41bb-4226-940d-bff9de01def9" name="Changes" comment="Add css files and redesign some pages">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/fragments/footer.html" afterDir="false" />
+    <list default="true" id="02f3e36b-41bb-4226-940d-bff9de01def9" name="Changes" comment="Add footer and change header">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/FeedbackController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/service/FeedbackService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/admin.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/admin_add.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/admin_feedback_list.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/feedback.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/select_product_for_feedback.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/MainController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/ProductController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/RegistrationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/RegistrationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/domain/Feedback.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/domain/Feedback.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/domain/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/domain/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/repos/FeedbackRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/repos/FeedbackRepo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/repos/UserRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/repos/UserRepo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/service/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/service/OrderService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/service/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/service/ProductService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/auntification.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/auntification.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/static/basket.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/basket.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/static/greeting.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/greeting.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/information.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/information.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/product_list.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/product_list.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/profile.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/profile.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/admin_add_product.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/admin_add_product.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/admin_product_edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/admin_product_edit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/admin_product_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/admin_product_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/admin_user_edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/admin_user_edit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/admin_user_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/admin_user_list.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/basket.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/basket.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/greeting.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/greeting.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/information.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/information.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/product_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/product_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/main.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/profile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/registration.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/registration.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,8 +53,8 @@
       <list>
         <option value="Enum" />
         <option value="Interface" />
-        <option value="Class" />
         <option value="HTML File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -190,7 +218,15 @@
       <option name="project" value="LOCAL" />
       <updated>1731925440343</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Add footer and change header">
+      <option name="closed" value="true" />
+      <created>1731928333012</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1731928333012</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -213,6 +249,7 @@
     <MESSAGE value="I made a shopping cart page, calculated the order amount, deleted and added to the cart. Processing the order entity" />
     <MESSAGE value="Made feedback card in user profile" />
     <MESSAGE value="Add css files and redesign some pages" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add css files and redesign some pages" />
+    <MESSAGE value="Add footer and change header" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add footer and change header" />
   </component>
 </project>

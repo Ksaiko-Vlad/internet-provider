@@ -1,7 +1,9 @@
 package org.example.controller;
 
+import org.example.domain.Feedback;
 import org.example.domain.Product;
 import org.example.domain.Type;
+import org.example.repos.FeedbackRepo;
 import org.example.repos.ProductRepo; // Переименуйте репозиторий для большей ясности
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -14,6 +16,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.List;
 import java.util.UUID;
 
 @Controller
@@ -21,11 +24,15 @@ public class MainController {
     @Autowired
     private ProductRepo productRepo;
 
+    @Autowired
+    private FeedbackRepo feedbackRepo;
+
     @Value("${upload.path}")
 private String uploadPath;
 
     @GetMapping("/")
-    public String greeting() {
+    public String greeting(Model model) {
+        model.addAttribute("feedbacks", feedbackRepo.findAll()); // Передаём отзывы в модель
         return "greeting";
     }
 
@@ -75,6 +82,6 @@ product.setFilename(resultFilename);
 
         productRepo.save(product);
         model.addAttribute("products", productRepo.findAll());
-        return "main";
+        return "admin_add_product";
     }
 }

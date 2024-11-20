@@ -19,8 +19,17 @@ import java.util.stream.Collectors;
 
 @Service
 public class UserService implements UserDetailsService {
+
     @Autowired
     private UserRepo userRepo;
+
+    public boolean existsByUsername(String username) {
+        return userRepo.existsByUsername(username); // Метод в репозитории
+    }
+
+    public boolean existsByPhone(String phone) {
+        return userRepo.existsByPhone(phone); // Метод в репозитории
+    }
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
@@ -49,7 +58,7 @@ public class UserService implements UserDetailsService {
         userRepo.save(user);
     }
 
-    public void updateProfile(User user, String username, String password, Integer phone) {
+    public void updateProfile(User user, String username, String password, String phone) {
         // Обновляем телефон, если новый номер предоставлен и отличается от текущего
         if (phone != null && !phone.equals(user.getPhone())) {
             user.setPhone(phone);
@@ -67,5 +76,4 @@ public class UserService implements UserDetailsService {
 
         userRepo.save(user);
     }
-
 }

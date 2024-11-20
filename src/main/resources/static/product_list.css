@@ -8,3 +8,53 @@
         width: 40% !important; /* Ширина блока с изображением */
         max-width: 200px !important; /* Максимальная ширина изображения */
     }
+
+    .btn {
+            background-color: #B9E4F7; /* Указанный цвет */
+            border-color: #B9E4F7; /* Указанный цвет */
+            border-radius: 50px; /* Закругленные края */
+            padding: 0.75rem 1.25rem;
+            font-weight: 600;
+            color: #fff; /* Белый текст для контраста */
+            transition: all 0.3s ease; /* Плавный переход для hover */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Легкая тень */
+        }
+
+        /* Эффект наведения */
+        .btn:hover {
+            background-color: #A1D7F2; /* Темнее на hover */
+            border-color: #A1D7F2;
+            transform: scale(1.05); /* Легкое увеличение */
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Более глубокая тень */
+        }
+
+        /* Убираем стандартный outline при фокусе */
+        .btn:focus {
+            outline: none;
+            box-shadow: 0 0 0 0.2rem rgba(185, 228, 247, 0.5); /* Голубая подсветка */
+        }
+
+        .btn-outline-danger {
+                     background-color: #FF6961; /* Светло-красный цвет */
+                     border-color: #FF6961; /* Светло-красный цвет */
+                     border-radius: 50px; /* Закругленные края */
+                     padding: 0.75rem 1.25rem;
+                     font-weight: 600;
+                     color: #fff; /* Белый текст для контраста */
+                     transition: all 0.3s ease; /* Плавный переход для hover */
+                     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Легкая тень */
+                 }
+
+                 /* Эффект наведения */
+                 .btn-outline-danger:hover {
+                     background-color: #E63946; /* Более темный красный цвет */
+                     border-color: #E63946; /* Более темный красный цвет */
+                     transform: scale(1.05); /* Легкое увеличение */
+                     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Более глубокая тень */
+                 }
+
+                 /* Убираем стандартный outline при фокусе */
+                 .btn-outline-danger:focus {
+                     outline: none;
+                     box-shadow: 0 0 0 0.2rem rgba(255, 105, 97, 0.5); /* Красноватая подсветка */
+                 }

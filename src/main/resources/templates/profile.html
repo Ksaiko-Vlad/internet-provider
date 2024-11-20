@@ -56,7 +56,7 @@
 
             <!-- Кнопка оставить отзыв -->
             <div class="mt-auto">
-              <a href="#" class="btn btn-primary w-100">Оставить отзыв</a>
+              <a th:href="@{/feedback/add/{orderId}(orderId=${order.id})}" class="btn btn-primary w-100">Оставить отзыв</a>
             </div>
           </div>
         </div>

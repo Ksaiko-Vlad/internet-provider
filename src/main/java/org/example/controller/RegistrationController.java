@@ -13,6 +13,7 @@ import java.util.Map;
 
 @Controller
 public class RegistrationController {
+
     @Autowired
     private UserRepo userRepo;
 
@@ -23,17 +24,25 @@ public class RegistrationController {
 
     @PostMapping("/registration")
     public String addUser(User user, Map<String, Object> model) {
-        User userFromDb = userRepo.findByUsername(user.getUsername());
-
-        if (userFromDb != null) {
-            model.put("message", "User exists!");
+        // Проверяем, существует ли пользователь с таким именем
+        if (userRepo.existsByUsername(user.getUsername())) {
+            model.put("usernameError", "Имя пользователя уже занято!");
             return "registration";
         }
 
+        // Проверяем, существует ли пользователь с таким номером телефона
+        if (userRepo.existsByPhone(user.getPhone())) {
+            model.put("phoneError", "Номер телефона уже используется!");
+            return "registration";
+        }
+
+        // Устанавливаем стандартные параметры для нового пользователя
         user.setActive(true);
         user.setRoles(Collections.singleton(Role.USER));
-        userRepo.save(user);
+        userRepo.save(user); // Сохраняем пользователя в БД
 
+        // Перенаправляем на страницу входа после успешной регистрации
         return "redirect:/login";
     }
+
 }

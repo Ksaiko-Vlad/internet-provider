@@ -3,6 +3,7 @@ package org.example.controller;
 import org.example.domain.Order;
 import org.example.domain.Role;
 import org.example.domain.User;
+import org.example.repos.UserRepo;
 import org.example.service.OrderService;
 import org.example.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -71,7 +72,7 @@ public class UserController {
     @AuthenticationPrincipal User user,
     @RequestParam String username,
     @RequestParam String password,
-    @RequestParam Integer phone){
+    @RequestParam String phone){
 
         userService.updateProfile(user, username, password, phone);
         return "redirect:/user/profile";

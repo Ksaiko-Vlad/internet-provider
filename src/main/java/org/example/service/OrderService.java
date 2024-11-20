@@ -35,6 +35,10 @@ public class OrderService {
         }
     }
 
+    public Order findById(Long id) {
+        return orderRepo.findById(id).orElseThrow(() -> new IllegalArgumentException("Заказ не найден!"));
+    }
+
     // Удалить товар из корзины
     public void removeFromCart(Product product) {
         if (!cart.contains(product)) {

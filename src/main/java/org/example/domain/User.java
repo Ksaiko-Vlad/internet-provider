@@ -17,7 +17,7 @@ public class User implements UserDetails {
     private Long id;
     private String username;
     private String password;
-    private Integer phone;
+    private String phone;
     private boolean active;
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL,orphanRemoval = true)
@@ -34,11 +34,11 @@ public class User implements UserDetails {
         return roles.contains(Role.ADMIN);
     }
 
-    public Integer getPhone() {
+    public String getPhone() {
         return phone;
     }
 
-    public void setPhone(Integer phone) {
+    public void setPhone(String phone) {
         this.phone = phone;
     }
 

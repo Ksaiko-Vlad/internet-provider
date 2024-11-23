@@ -5,6 +5,7 @@ import org.example.domain.User;
 import org.example.service.OrderService;
 import org.example.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -29,6 +30,7 @@ public class OrderController {
         return "basket";
     }
 
+    @PreAuthorize("hasAuthority('ADMIN')")
     @GetMapping("/orders")
     public String allOrders(Model model) {
         model.addAttribute("orders", orderService.getAllOrders());

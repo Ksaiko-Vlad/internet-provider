@@ -8,6 +8,7 @@ import org.example.service.FeedbackService;
 import org.example.service.OrderService;
 import org.example.service.ProductService;
 import org.example.service.UserService;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -59,12 +60,14 @@ public class FeedbackController {
         return "redirect:/";
     }
 
+    @PreAuthorize("hasAuthority('ADMIN')")
     @GetMapping("/list")
     public String listFeedbacks(Model model) {
         model.addAttribute("feedbacks", feedbackService.findAll());
         return "admin_feedback_list"; // Имя нового шаблона
     }
 
+    @PreAuthorize("hasAuthority('ADMIN')")
     @PostMapping("/delete/{feedbackId}")
     public String deleteFeedback(@PathVariable Long feedbackId) {
         feedbackService.deleteById(feedbackId);

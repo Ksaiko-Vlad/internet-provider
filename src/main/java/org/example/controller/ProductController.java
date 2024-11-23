@@ -5,6 +5,7 @@ import org.example.repos.ProductRepo;
 import org.example.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -28,6 +29,7 @@ public class ProductController {
     private ProductRepo productRepo;
 
     // Отображение списка продуктов
+    @PreAuthorize("hasAuthority('ADMIN')")
     @GetMapping
     public String listProducts(Model model) {
         model.addAttribute("products", productService.findAll());
@@ -35,6 +37,7 @@ public class ProductController {
     }
 
     // Форма редактирования продукта
+    @PreAuthorize("hasAuthority('ADMIN')")
     @GetMapping("/edit/{id}")
     public String editProductForm(@PathVariable Long id, Model model) {
         Product product = productService.findById(id);
@@ -43,6 +46,7 @@ public class ProductController {
     }
 
     // Обработка сохранения изменений продукта
+    @PreAuthorize("hasAuthority('ADMIN')")
     @PostMapping("/edit/{id}")
     public String updateProduct(
             @PathVariable Long id,

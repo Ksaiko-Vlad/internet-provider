@@ -7,6 +7,7 @@ import org.example.repos.FeedbackRepo;
 import org.example.repos.ProductRepo; // Переименуйте репозиторий для большей ясности
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -36,6 +37,7 @@ private String uploadPath;
         return "greeting";
     }
 
+    @PreAuthorize("hasAuthority('ADMIN')")
     @GetMapping("/main")
     public String menu() {
         return "main";
@@ -52,12 +54,14 @@ private String uploadPath;
         return "product_list";
     }
 
+    @PreAuthorize("hasAuthority('ADMIN')")
     @GetMapping("/addproduct")
     public String addproduct(Model model) {
         model.addAttribute("products", productRepo.findAll());
         return "admin_add_product";
     }
 
+    @PreAuthorize("hasAuthority('ADMIN')")
     @PostMapping("/addproduct")
     public String add(
             @RequestParam String name,

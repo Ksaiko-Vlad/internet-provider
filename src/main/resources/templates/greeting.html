@@ -59,9 +59,29 @@
             <!-- Новости или акции -->
             <div class="alert alert-info text-center">
                 <h4 class="alert-heading">Акция месяца!</h4>
-                <p>Промо-акция на все наши услуги до конца месяца. Получите скидку 20% при заказе через сайт.</p>
+                <p>Промо-акция на все наши услуги до конца года. Получите скидку 15% при оформлении услуг в наших салонах.</p>
                 <hr>
-                <a href="/promotion" class="btn btn-success">Узнать подробности</a>
+                <!-- Кнопка для открытия модального окна -->
+                <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#promotionModal">Узнать подробности</button>
+            </div>
+
+            <!-- Модальное окно -->
+            <div class="modal fade" id="promotionModal" tabindex="-1" aria-labelledby="promotionModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="promotionModalLabel">Детали акции</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <h4>Промо-акция на все наши услуги!</h4>
+                            <p>Получите скидку 15% при оформлении услуг в наших салонах до конца года. Не упустите шанс воспользоваться этим предложением, по кодовому слову: NovaNet2024 !</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <!-- Отзывы -->

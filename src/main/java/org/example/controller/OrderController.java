@@ -29,6 +29,12 @@ public class OrderController {
         return "basket";
     }
 
+    @GetMapping("/orders")
+    public String allOrders(Model model) {
+        model.addAttribute("orders", orderService.getAllOrders());
+        return "admin_order_list"; // Название шаблона для отображения всех заказов
+    }
+
     // Добавить продукт в корзину
     @PostMapping("/basket/add")
     public String addToBasket(@RequestParam Long productId) {

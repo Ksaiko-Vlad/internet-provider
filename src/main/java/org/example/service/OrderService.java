@@ -59,6 +59,11 @@ public class OrderService {
                 .sum();
     }
 
+    // Получить все заказы
+    public List<Order> getAllOrders() {
+        return orderRepo.findAll();
+    }
+
     // Создать заказ на основе корзины
     public void createOrder(User user) {
         if (cart.isEmpty()) {

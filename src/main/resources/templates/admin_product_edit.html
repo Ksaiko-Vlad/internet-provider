@@ -18,6 +18,9 @@
       <label for="name" class="form-label">Название</label>
       <input type="text" class="form-control" id="name" th:field="*{name}" placeholder="Название" required>
     </div>
+    <div th:if="${errorMessage}" class="alert alert-danger">
+      <p th:text="${errorMessage}"></p>
+    </div>
     <div class="mb-3">
       <label for="type" class="form-label">Тип</label>
       <select id="type" class="form-select" th:field="*{type}" required>

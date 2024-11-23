@@ -23,6 +23,9 @@ public class UserController {
     private UserService userService;
 
     @Autowired
+    private UserRepo userRepo;
+
+    @Autowired
     private OrderService orderService;
 
     @PreAuthorize("hasAuthority('ADMIN')")
@@ -47,10 +50,19 @@ public class UserController {
     public String userSave(
             @RequestParam String username,
             @RequestParam Map<String, String> form,
-            @RequestParam ("userId") User user)
-    {
-       userService.saveUser(user, username, form);
+            @RequestParam("userId") User user,
+            Model model) {
 
+        // Проверяем, существует ли пользователь с таким именем (кроме текущего)
+        if (userRepo.existsByUsername(username) && !user.getUsername().equals(username)) {
+            model.addAttribute("usernameError", "Имя пользователя уже занято!");
+            model.addAttribute("user", user);
+            model.addAttribute("roles", Role.values());
+            return "admin_user_edit";
+        }
+
+        // Сохраняем пользователя
+        userService.saveUser(user, username, form);
         return "redirect:/user";
     }
 
@@ -67,15 +79,35 @@ public class UserController {
     }
 
 
-    @PostMapping("profile")
+    @PostMapping("/profile")
     public String updateProfile(
-    @AuthenticationPrincipal User user,
-    @RequestParam String username,
-    @RequestParam String password,
-    @RequestParam String phone){
+            @AuthenticationPrincipal User user,
+            @RequestParam String username,
+            @RequestParam String password,
+            @RequestParam String phone,
+            Map<String, Object> model) {
 
+        // Проверяем, существует ли пользователь с таким именем (кроме текущего)
+        if (userRepo.existsByUsername(username) && !user.getUsername().equals(username)) {
+            model.put("usernameError", "Имя пользователя уже занято!");
+            model.put("username", user.getUsername()); // Возвращаем старое имя
+            model.put("phone", user.getPhone());       // Возвращаем старый телефон
+            return "profile";
+        }
+
+        // Проверяем, существует ли пользователь с таким номером телефона (кроме текущего)
+        if (userRepo.existsByPhone(phone) && !user.getPhone().equals(phone)) {
+            model.put("phoneError", "Номер телефона уже используется!");
+            model.put("username", user.getUsername()); // Возвращаем старое имя
+            model.put("phone", user.getPhone());       // Возвращаем старый телефон
+            return "profile";
+        }
+
+        // Обновляем данные пользователя
         userService.updateProfile(user, username, password, phone);
         return "redirect:/user/profile";
     }
+
+
 
 }

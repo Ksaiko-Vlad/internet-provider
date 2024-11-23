@@ -30,7 +30,7 @@ public class FeedbackController {
     }
 
     // Страница добавления отзыва
-    @GetMapping("/add-product/{productId}")
+    @GetMapping("/add-feedback/{productId}")
     public String showAddFeedbackPage(@PathVariable Long productId, Model model) {
         Product product = productService.findById(productId);
         model.addAttribute("product", product);

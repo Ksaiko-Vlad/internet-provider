@@ -67,17 +67,24 @@ private String uploadPath;
             @RequestParam("file") MultipartFile file,
             Model model) throws IOException {
 
-        Product product = new Product(name, description, price, type);// Конструктор без id
+        // Проверка на существование продукта с таким же названием
+        if (productRepo.existsByName(name)) {
+            model.addAttribute("errorMessage", "Продукт с таким названием уже существует.");
+            model.addAttribute("products", productRepo.findAll());
+            return "admin_add_product"; // Вернуться на страницу добавления с сообщением об ошибке
+        }
 
-        if (file != null && !file.getOriginalFilename().isEmpty()){
-File uploadDir = new File(uploadPath);
-if (!uploadDir.exists()) {
-    uploadDir.mkdir();
-}
-           String uuidFile = UUID.randomUUID().toString();
-String resultFilename = uuidFile + "." + file.getOriginalFilename();
-file.transferTo(new File(uploadPath + "/" + resultFilename));
-product.setFilename(resultFilename);
+        Product product = new Product(name, description, price, type);
+
+        if (file != null && !file.getOriginalFilename().isEmpty()) {
+            File uploadDir = new File(uploadPath);
+            if (!uploadDir.exists()) {
+                uploadDir.mkdir();
+            }
+            String uuidFile = UUID.randomUUID().toString();
+            String resultFilename = uuidFile + "." + file.getOriginalFilename();
+            file.transferTo(new File(uploadPath + "/" + resultFilename));
+            product.setFilename(resultFilename);
         }
 
         productRepo.save(product);

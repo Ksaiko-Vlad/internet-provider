@@ -24,6 +24,9 @@
               <div class="card-body d-flex flex-column">
                 <h5 class="card-title text-dark" th:text="${product.name}">Название товара</h5>
                 <p class="card-text text-secondary mt-2">
+                  <strong>Описание: </strong><span th:text="${product.description}"></span>
+                </p>
+                <p class="card-text text-secondary mt-2">
                   <strong>Цена: </strong><span th:text="${product.price}"></span> руб.
                 </p>
                 <form th:action="@{/basket/remove}" method="post" class="mt-auto">

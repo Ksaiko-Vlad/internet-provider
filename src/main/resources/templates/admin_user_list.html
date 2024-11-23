@@ -21,6 +21,7 @@
                     <thead>
                     <tr class="bg-light text-secondary">
                         <th scope="col">Имя</th>
+                        <th scope="col">ID</th>
                         <th scope="col">Номер телефона</th>
                         <th scope="col">Роль</th>
                         <th scope="col" class="text-end">Действия</th>
@@ -29,6 +30,7 @@
                     <tbody>
                     <tr th:each="user : ${users}" class="border-bottom">
                         <td th:text="${user.username}">Username</td>
+                        <td th:text="${user.id}">id</td>
                         <td th:text="${user.phone}">Phone</td>
                         <td th:text="${#strings.arrayJoin(user.roles, ', ')}">Role</td>
                         <td class="text-end">

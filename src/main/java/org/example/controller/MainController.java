@@ -4,9 +4,10 @@ import org.example.domain.Feedback;
 import org.example.domain.Product;
 import org.example.domain.Type;
 import org.example.repos.FeedbackRepo;
-import org.example.repos.ProductRepo; // Переименуйте репозиторий для большей ясности
+import org.example.repos.ProductRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.data.domain.Sort;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -49,8 +50,36 @@ private String uploadPath;
     }
 
     @GetMapping("/productslist")
-    public String productslist(Model model) {
-        model.addAttribute("products", productRepo.findAll());
+    public String listProducts(
+            @RequestParam(required = false) String search,
+            @RequestParam(required = false) String type,
+            @RequestParam(required = false) String sortBy,
+            @RequestParam(required = false, defaultValue = "asc") String direction,
+            Model model) {
+
+        List<Product> products;
+
+        if (search != null && !search.isEmpty()) {
+            products = productRepo.findByNameContainingIgnoreCase(search);
+        } else if (type != null && !type.isEmpty()) {
+            products = productRepo.findByType(Type.valueOf(type));
+        } else if ("price".equals(sortBy)) {
+            Sort sort = Sort.by("price");
+            sort = "desc".equals(direction) ? sort.descending() : sort.ascending();
+            products = productRepo.findAll(sort);
+        } else {
+            products = productRepo.findAll();
+        }
+
+        model.addAttribute("products", products);
+        model.addAttribute("search", search);
+        model.addAttribute("type", type);
+        model.addAttribute("sortBy", sortBy);
+        model.addAttribute("direction", direction);
+
+        // Добавляем список всех типов для выбора в фильтре
+        model.addAttribute("types", Type.values());
+
         return "product_list";
     }
 

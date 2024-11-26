@@ -5,6 +5,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
     <link rel="stylesheet" href="/greeting.css">
 </head>
 <body>
@@ -18,39 +19,71 @@
             <!-- Приветствие -->
             <div class="text-center my-5">
                 <h1>Добро пожаловать в NovaNet!</h1>
-                <p class="lead">Мы предоставляем высококачественные услуги по оптимизации бизнес-процессов и внедрению инновационных решений.</p>
-                <a href="/about" class="btn btn-primary btn-lg">Узнать больше</a>
+                <p class="lead">Мы предлагаем высококачественные интернет-услуги и инновационные решения для ваших потребностей в связи и технологиях.</p>
+                <a href="/information" class="btn btn-primary btn-lg">Узнать больше</a>
             </div>
 
-            <!-- Карточки с услугами -->
-            <div class="row text-center mb-5">
-                <div class="col-md-4">
-                    <div class="card shadow-sm">
-                        <img src="service1.jpg" class="card-img-top" alt="Услуга 1">
-                        <div class="card-body">
-                            <h5 class="card-title">Услуга 1</h5>
-                            <p class="card-text">Описание первой услуги. Подробности и условия можно узнать на странице.</p>
-                            <a href="/service1" class="btn btn-outline-primary">Подробнее</a>
+            <!-- Карусель изображений с кнопками -->
+            <div id="carouselExampleIndicators" class="carousel slide mb-5" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner rounded-4">
+                    <!-- Слайд 1 -->
+                    <div class="carousel-item active text-center">
+                        <img src="/static/images/baner2.jpg" class="d-block w-100" alt="Первый слайд">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Добро пожаловать!</h5>
+                            <p>Узнайте больше о наших услугах.</p>
+                            <a href="/productslist" class="btn btn-primary">Перейти к услугам</a>
+                        </div>
+                    </div>
+                    <!-- Слайд 2 -->
+                    <div class="carousel-item text-center">
+                        <img src="/static/images/baner3.jpg" class="d-block w-100" alt="Второй слайд">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Ваши отзывы - наше качество</h5>
+                            <p>Ознакомтесь с отзывами других клиентов, чтобы убедиться в нашем качестве.</p>
+                            <a href="#feedback-section" class="btn btn-success">Отзывы клиентов</a>
+                        </div>
+                    </div>
+                    <!-- Слайд 3 -->
+                    <div class="carousel-item text-center">
+                        <img src="/static/images/baner4.jpg" class="d-block w-100" alt="Третий слайд">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Свяжитесь с нами</h5>
+                            <p>Мы всегда готовы помочь вам.</p>
+                            <a href="/information" class="btn btn-warning">Контакты</a>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="card shadow-sm">
-                        <img src="service2.jpg" class="card-img-top" alt="Услуга 2">
-                        <div class="card-body">
-                            <h5 class="card-title">Услуга 2</h5>
-                            <p class="card-text">Описание второй услуги. Узнайте больше, перейдя по ссылке.</p>
-                            <a href="/service2" class="btn btn-outline-primary">Подробнее</a>
-                        </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Предыдущий</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Следующий</span>
+                </button>
+            </div>
+
+            <!-- Блок с услугами -->
+            <div class="card shadow-sm mb-5 rounded-4">
+                <div class="row g-0">
+                    <!-- Увеличенный блок изображения -->
+                    <div class="col-md-6 d-flex align-items-center justify-content-center">
+                        <img src="/static/images/preview1.jpg" class="img-fluid rounded-start fixed-img" alt="Услуги">
                     </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card shadow-sm">
-                        <img src="service3.jpg" class="card-img-top" alt="Услуга 3">
+                    <!-- Блок с текстом -->
+                    <div class="col-md-6">
                         <div class="card-body">
-                            <h5 class="card-title">Услуга 3</h5>
-                            <p class="card-text">Краткое описание третьей услуги, с возможностью перехода на страницу с подробной информацией.</p>
-                            <a href="/service3" class="btn btn-outline-primary">Подробнее</a>
+                            <h5 class="card-title">Наши услуги</h5>
+                            <p class="card-text">
+                                Присоединяйтесь к нашей платформе, чтобы получить доступ к офрмлению наших интернет-услуги! Зарегистрированные пользователи могут управлять просматривать свои заказы, оставлять отзывы и заказывать новые услуги онлайн. Создайте аккаунт и откройте для себя удобство современного сервиса!
+                            </p>
+                            <a href="/registration" class="btn btn-primary">Перейти к созданию профиля</a>
                         </div>
                     </div>
                 </div>
@@ -85,7 +118,7 @@
             </div>
 
             <!-- Отзывы -->
-            <div class="mt-5">
+            <div id="feedback-section" class="mt-5">
                 <h2 class="text-center text-dark mb-4">Отзывы наших клиентов</h2>
                 <div class="row">
                     <div class="col-md-4 mb-4" th:each="feedback : ${feedbacks}">

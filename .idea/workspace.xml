@@ -4,12 +4,35 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="02f3e36b-41bb-4226-940d-bff9de01def9" name="Changes" comment="Administrator panel Well Done!!!!">
+    <list default="true" id="02f3e36b-41bb-4226-940d-bff9de01def9" name="Changes" comment="Administrator panel Well Done with preAuthorize">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/FeedbackController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/FeedbackController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/MainController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/OrderController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/ProductController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/domain/Type.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/domain/Type.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/repos/ProductRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/repos/ProductRepo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/greeting.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/greeting.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/product_list.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/product_list.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/WARN.text" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/WARN.text" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/admin_add_product.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/admin_add_product.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/admin_feedback_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/admin_feedback_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/admin_order_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/admin_order_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/admin_product_edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/admin_product_edit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/admin_product_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/admin_product_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/admin_user_edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/admin_user_edit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/admin_user_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/admin_user_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/basket.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/basket.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/feedback.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/feedback.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/fragments/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/fragments/header.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/greeting.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/greeting.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/information.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/information.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/main.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/product_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/product_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/profile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/registration.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/registration.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/select_product_for_feedback.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/select_product_for_feedback.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,6 +46,7 @@
         <option value="Interface" />
         <option value="Class" />
         <option value="HTML File" />
+        <option value="UML Class" />
       </list>
     </option>
   </component>
@@ -47,24 +71,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;first&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Ksaiko/Desktop/gs-accessing-data-mysql-main&quot;,
-    &quot;onboarding.tips.debug.path&quot;: &quot;E:/KyrsachJava/INTERNER-PROVIDER/src/main/java/org/example/Main.java&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.repository.indices&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Main.executor": "Run",
+    "DefaultHtmlFileTemplate": "HTML File",
+    "DefaultPlantUmlFileTemplate": "UML Class",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "first",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/Ksaiko/Desktop/gs-accessing-data-mysql-main",
+    "onboarding.tips.debug.path": "E:/KyrsachJava/INTERNER-PROVIDER/src/main/java/org/example/Main.java",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\KyrsachJava\INTERNER-PROVIDER\src\main\resources\static" />
       <recent name="E:\KyrsachJava\INTERNER-PROVIDER\src\main\resources\templates\fragments" />
       <recent name="E:\KyrsachJava\INTERNER-PROVIDER\src\main\resources\templates" />
     </key>
@@ -210,7 +236,15 @@
       <option name="project" value="LOCAL" />
       <updated>1732363354178</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Administrator panel Well Done with preAuthorize">
+      <option name="closed" value="true" />
+      <created>1732363876565</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1732363876565</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -236,6 +270,7 @@
     <MESSAGE value="Add footer and change header" />
     <MESSAGE value="Add validation on registration" />
     <MESSAGE value="Administrator panel Well Done!!!!" />
-    <option name="LAST_COMMIT_MESSAGE" value="Administrator panel Well Done!!!!" />
+    <MESSAGE value="Administrator panel Well Done with preAuthorize" />
+    <option name="LAST_COMMIT_MESSAGE" value="Administrator panel Well Done with preAuthorize" />
   </component>
 </project>

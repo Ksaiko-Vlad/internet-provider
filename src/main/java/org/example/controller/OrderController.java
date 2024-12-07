@@ -39,10 +39,17 @@ public class OrderController {
 
     // Добавить продукт в корзину
     @PostMapping("/basket/add")
-    public String addToBasket(@RequestParam Long productId) {
+    public String addToBasket(@AuthenticationPrincipal User user, @RequestParam Long productId, Model model) {
         Product product = productService.findById(productId);
         if (product != null) {
-            orderService.addToCart(product);
+            try {
+                orderService.addToCart(user, product);
+            } catch (IllegalArgumentException e) {
+                model.addAttribute("errorMessage", e.getMessage());
+                model.addAttribute("cart", orderService.getCart());
+                model.addAttribute("totalPrice", orderService.getTotalPrice());
+                return "basket"; // Вернуться на страницу корзины с ошибкой
+            }
         }
         return "redirect:/productslist"; // Перенаправление на список продуктов
     }
@@ -66,8 +73,13 @@ public class OrderController {
 
     // Оформить заказ
     @PostMapping("/basket/order")
-    public String createOrder(@AuthenticationPrincipal User user) {
+    public String createOrder(@AuthenticationPrincipal User user, Model model) {
+        if (orderService.getCart().isEmpty()) {
+            model.addAttribute("errorMessage", "Ваша корзина пуста. Добавьте товары перед оформлением заказа.");
+            return "basket"; // Возврат к корзине с сообщением об ошибке
+        }
         orderService.createOrder(user);
         return "redirect:/basket"; // Перенаправление на профиль после оформления заказа
     }
 }
+

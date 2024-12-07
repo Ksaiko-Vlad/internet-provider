@@ -38,7 +38,6 @@
             </div>
           </div>
         </div>
-
         <div class="mt-4 d-flex justify-content-between align-items-center">
           <p class="h4"><strong>Общая стоимость: </strong><span th:text="${totalPrice}"></span> руб.</p>
           <form th:action="@{/basket/order}" method="post" sec:authorize="isAuthenticated()">
@@ -46,7 +45,6 @@
           </form>
         </div>
       </div>
-
       <div th:if="${cart == null or cart.size() == 0}" class="text-center my-5">
         <p class="h5 text-muted">Ваша корзина пуста. Добавьте товары, чтобы оформить заказ!</p>
         <a th:href="@{/productslist}" class="btn btn-primary">Перейти к услугам</a>

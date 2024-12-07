@@ -26,6 +26,16 @@ public class ProductService {
         return productRepo.findById(id).orElseThrow(() -> new IllegalArgumentException("Продукт не найден"));
     }
 
+    public List<Product> getAllActiveProducts() {
+        return productRepo.findByActiveTrue();
+    }
+
+    public void toggleProductActiveState(Long id) {
+        Product product = findById(id); // Находим продукт
+        product.setActive(!product.isActive()); // Меняем состояние
+        productRepo.save(product); // Сохраняем изменения
+    }
+
     // Получить все продукты
     public List<Product> findAll() {
         return (List<Product>) productRepo.findAll();
@@ -65,15 +75,11 @@ public class ProductService {
     }
 
 
-    // Удалить продукт
     public void deleteProduct(Long id) {
         Product product = findById(id);
-
-        // Удаляем файл изображения, если он существует
-        deleteFile(product.getFilename());
-
-        // Удаляем продукт из базы данных
-        productRepo.deleteById(id);
+        // Делаем товар неактивным
+        product.setActive(false);
+        productRepo.save(product);
     }
 
     // Сохранение файла

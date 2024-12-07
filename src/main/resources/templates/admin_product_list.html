@@ -35,12 +35,15 @@
             <td th:text="${product.price}">100</td>
             <td th:text="${product.description}">Описание</td>
             <td class="text-end">
-              <a th:href="@{/admin_product_list/edit/{id}(id=${product.id})}"
-                 class="btn btn-outline-primary btn-sm me-2">Редактировать</a>
-              <form th:action="@{/admin_product_list/delete/{id}(id=${product.id})}"
-                    method="post" style="display:inline;">
-                <button type="submit" class="btn btn-outline-danger btn-sm">Удалить</button>
-              </form>
+              <div class="d-flex">
+                <a th:href="@{/admin_product_list/edit/{id}(id=${product.id})}"
+                   class="btn btn-outline-primary btn-sm me-2">Редактировать</a>
+                <form th:action="@{/admin_product_list/toggle/{id}(id=${product.id})}" method="post">
+                  <button type="submit"
+                          th:classappend="${product.active} ? 'btn-outline-danger' : 'btn-outline-success'"
+                          th:text="${product.active} ? 'Отключить' : 'Включить'"></button>
+                </form>
+              </div>
             </td>
           </tr>
           </tbody>

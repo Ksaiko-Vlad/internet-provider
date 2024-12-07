@@ -59,25 +59,29 @@ private String uploadPath;
 
         List<Product> products;
 
+        // Устанавливаем сортировку по цене (если требуется)
+        Sort sort = Sort.by("price");
+        sort = "desc".equals(direction) ? sort.descending() : sort.ascending();
+
+        // Фильтрация и сортировка
         if (search != null && !search.isEmpty()) {
-            products = productRepo.findByNameContainingIgnoreCase(search);
+            products = productRepo.findByNameContainingIgnoreCaseAndActiveTrue(search, sort);
         } else if (type != null && !type.isEmpty()) {
-            products = productRepo.findByType(Type.valueOf(type));
+            products = productRepo.findByTypeAndActiveTrue(Type.valueOf(type), sort);
         } else if ("price".equals(sortBy)) {
-            Sort sort = Sort.by("price");
-            sort = "desc".equals(direction) ? sort.descending() : sort.ascending();
-            products = productRepo.findAll(sort);
+            products = productRepo.findByActiveTrue(sort);
         } else {
-            products = productRepo.findAll();
+            products = productRepo.findByActiveTrue();
         }
 
+        // Передача данных в шаблон
         model.addAttribute("products", products);
         model.addAttribute("search", search);
         model.addAttribute("type", type);
         model.addAttribute("sortBy", sortBy);
         model.addAttribute("direction", direction);
 
-        // Добавляем список всех типов для выбора в фильтре
+        // Добавляем список всех типов для фильтрации
         model.addAttribute("types", Type.values());
 
         return "product_list";

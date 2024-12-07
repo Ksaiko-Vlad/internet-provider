@@ -26,14 +26,34 @@ public class OrderService {
         return orderRepo.findByUser(user);
     }
 
+    // Проверка наличия товара в корзине
+    public boolean isProductInCart(Product product) {
+        return cart.contains(product);
+    }
+
+    // Проверить, заказывал ли пользователь данный продукт
+    public boolean hasUserOrderedProduct(User user, Product product) {
+        List<Order> userOrders = getOrdersByUser(user);
+        return userOrders.stream()
+                .flatMap(order -> order.getProducts().stream()) // Получаем все продукты из заказов
+                .anyMatch(orderedProduct -> orderedProduct.equals(product)); // Проверяем совпадение
+    }
+
     // Добавить товар в корзину
-    public void addToCart(Product product) {
-        if (product != null) {
-            cart.add(product);
-        } else {
+    public void addToCart(User user, Product product) {
+        if (product == null) {
             throw new IllegalArgumentException("Продукт не может быть null.");
         }
+        if (isProductInCart(product)) {
+            throw new IllegalArgumentException("Товар уже добавлен в корзину.");
+        }
+        if (hasUserOrderedProduct(user, product)) {
+            throw new IllegalArgumentException("Вы уже заказывали этот товар ранее.");
+        }
+        cart.add(product);
     }
+
+
 
     public Order findById(Long id) {
         return orderRepo.findById(id).orElseThrow(() -> new IllegalArgumentException("Заказ не найден!"));

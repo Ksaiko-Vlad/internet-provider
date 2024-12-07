@@ -15,6 +15,7 @@ public class Product {
     private String description;
 
     private  String filename;
+    private boolean active = true;
 
     @Enumerated(EnumType.STRING)
     private Type type;
@@ -44,6 +45,14 @@ public class Product {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public boolean isActive() {
+        return active;
+    }
+
+    public void setActive(boolean active) {
+        this.active = active;
     }
 
     public String getName() {

@@ -28,6 +28,12 @@ public class ProductController {
     @Autowired
     private ProductRepo productRepo;
 
+    @PostMapping("/toggle/{id}")
+    public String toggleProduct(@PathVariable Long id) {
+        productService.toggleProductActiveState(id);
+        return "redirect:/admin_product_list";
+    }
+
     // Отображение списка продуктов
     @PreAuthorize("hasAuthority('ADMIN')")
     @GetMapping
